@@ -206,7 +206,7 @@ function btn(cls,text,onClick,extra){
 
 // 참조 번호를 클릭 가능한 span으로 변환
 function linkify(text, accent){
-  var parts=text.split(/([ADLTCOP][0-9]+[ab]?)/);
+  var parts=text.split(/(?<![A-Za-z])([ADLTCOP][0-9]+[ab]?)(?![A-Za-z0-9])/);
   var frag=document.createDocumentFragment();
   parts.forEach(function(p,i){
     if(REF_MAP[p]){
